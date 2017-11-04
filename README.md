@@ -40,9 +40,11 @@ public function behaviors()
     return [
         'slug' => [
             'class' => 'skeeks\yii2\slug\SlugBehavior',
-            'slugAttribute' => 'slug',
-            'attribute' => 'name',
+            'slugAttribute' => 'slug',                      //The attribute to be generated
+            'attribute' => 'name',                          //The attribute from which will be generated
             // optional params
+            'maxLength' => 64,                              //Maximum length of attribute slug
+            'minLength' => 3,                               //Min length of attribute slug
             'ensureUnique' => true,
             'slugifyOptions' => [
                 'lowercase' => true,
