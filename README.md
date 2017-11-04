@@ -3,7 +3,7 @@ Yii2 slug behavior (Semantic URL)
 
 This solution allows you to generate good slug urls. ([slug wiki](https://en.wikipedia.org/wiki/Semantic_URL)).
 
-Direct generation is engaged in a proven solution [cocur/slugify](https://github.com/cocur/slugify)
+Direct generation is engaged in a proven solution [cocur/slugify](https://github.com/cocur/slugify).
 
 [![Latest Stable Version](https://poser.pugx.org/skeeks/yii2-slug-behavior/v/stable.png)](https://packagist.org/packages/skeeks/yii2-slug-behavior)
 [![Total Downloads](https://poser.pugx.org/skeeks/yii2-slug-behavior/downloads.png)](https://packagist.org/packages/skeeks/yii2-slug-behavior)
