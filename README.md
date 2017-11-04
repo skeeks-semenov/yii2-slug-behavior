@@ -7,6 +7,7 @@ Direct generation is engaged in a proven solution [cocur/slugify](https://github
 
 [![Latest Stable Version](https://poser.pugx.org/skeeks/yii2-slug-behavior/v/stable.png)](https://packagist.org/packages/skeeks/yii2-slug-behavior)
 [![Total Downloads](https://poser.pugx.org/skeeks/yii2-slug-behavior/downloads.png)](https://packagist.org/packages/skeeks/yii2-slug-behavior)
+[![GPL-3.0 License](https://img.shields.io/packagist/l/skeeks/yii2-slug-behavior.svg)](https://opensource.org/licenses/GPL-3.0)
 [![Reference Status](https://www.versioneye.com/php/skeeks:yii2-slug-behavior/reference_badge.svg)](https://www.versioneye.com/php/skeeks:yii2-slug-behavior/references)
 [![Dependency Status](https://www.versioneye.com/php/skeeks:yii2-slug-behavior/dev-master/badge.png)](https://www.versioneye.com/php/skeeks:yii2-slug-behavior/dev-master)
 
