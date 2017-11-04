@@ -8,6 +8,7 @@
 namespace skeeks\yii2\slug;
 use Cocur\Slugify\Slugify;
 
+use yii\base\InvalidConfigException;
 use yii\db\BaseActiveRecord;
 use yii\behaviors\AttributeBehavior;
 use yii\base\Event;
@@ -22,13 +23,13 @@ class SlugBehavior extends AttributeBehavior
      * The attribute to be generated
      * @var string
      */
-    public $slugAttribute  = 'code';
+    public $slugAttribute  = '';
 
     /**
      * The attribute from which will be generated
      * @var string
      */
-    public $attribute      = 'name';
+    public $attribute      = '';
 
     /**
      * Slug attribute must be unique
@@ -66,6 +67,10 @@ class SlugBehavior extends AttributeBehavior
     public function init()
     {
         parent::init();
+
+        if (!$this->slugAttribute || !$this->attribute) {
+            throw new InvalidConfigException('Incorrectly configured behavior.');
+        }
 
         if (empty($this->attributes))
         {
@@ -107,7 +112,6 @@ class SlugBehavior extends AttributeBehavior
             {
                 if (!$this->owner->isNewRecord)
                 {
-                    //Значит неуникально
                     if ($founded = $this->owner->find()->where([
                         $this->slugAttribute => $slug
                     ])->andWhere(["!=", "id", $this->owner->id])->one())
@@ -120,7 +124,6 @@ class SlugBehavior extends AttributeBehavior
                     }
                 } else
                 {
-                    //Значит неуникально
                     if ($founded = $this->owner->find()->where([
                         $this->slugAttribute => $slug
                     ])->one())
