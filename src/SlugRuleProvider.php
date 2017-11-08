@@ -34,7 +34,7 @@ class SlugRuleProvider extends DefaultRuleProvider
              */
             return array_merge($russianRules, [
                 //kh после букв c,s,e,h ; в остальных случаях - h
-                'цх' => 'ckh',
+                /*'цх' => 'ckh',
                 'ЦХ' => 'CKh',
                 'Цх' => 'Ckh',
                 'цХ' => 'cKh',
@@ -55,6 +55,9 @@ class SlugRuleProvider extends DefaultRuleProvider
                 'щх' => 'shchkh',
                 'жх' => 'zhkh',
 
+                'хх' => 'hkh',
+
+                'hх' => 'hkh',*/
 
                 'ё' => 'yo',
                 'Ё' => 'Yo',
@@ -62,8 +65,11 @@ class SlugRuleProvider extends DefaultRuleProvider
                 'й' => 'j',
                 'Й' => 'J',
 
-                'х' => 'h',
-                'Х' => 'H',
+                /*'х' => 'h',
+                'Х' => 'H',*/
+
+                'х' => 'х',
+                'Х' => 'Х',
 
                 'ц' => 'c',
                 'Ц' => 'C',
