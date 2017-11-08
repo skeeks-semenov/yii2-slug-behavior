@@ -61,6 +61,30 @@ public function behaviors()
 ```
 
 
+
+Yandex translit http://translit-online.ru/yandex.html:
+
+```php
+public function behaviors()
+{
+    return [
+        'slug' => [
+            'class' => 'skeeks\yii2\slug\SlugBehavior',
+            'slugAttribute' => 'slug',                      //The attribute to be generated
+            'attribute' => 'name',                          //The attribute from which will be generated
+            // optional params
+            'slugifyOptions' => [
+                'rulesets' => [
+                    skeeks\yii2\slug\SlugRuleProvider::YANDEX, 
+                    'default'
+                ]
+            ]
+        ]
+    ];
+}
+
+```
+
 Links
 ----------
 * [Github](https://github.com/skeeks-semenov/yii2-slug-behavior)

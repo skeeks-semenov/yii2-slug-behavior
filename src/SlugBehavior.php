@@ -6,6 +6,7 @@
  * @date 04.11.2017
  */
 namespace skeeks\yii2\slug;
+use Cocur\Slugify\RuleProvider\RuleProviderInterface;
 use Cocur\Slugify\Slugify;
 
 use yii\base\InvalidConfigException;
@@ -57,6 +58,11 @@ class SlugBehavior extends AttributeBehavior
     public $slugifyOptions      = [];
 
     /**
+     * @var RuleProviderInterface
+     */
+    public $slugifyRuleProvider     = null;
+
+    /**
      * @var
      */
     public $value;
@@ -80,6 +86,9 @@ class SlugBehavior extends AttributeBehavior
                 BaseActiveRecord::EVENT_BEFORE_UPDATE => [$this->slugAttribute],
             ];
         }
+        if ($this->slugifyRuleProvider == null) {
+            $this->slugifyRuleProvider = new SlugRuleProvider();
+        }
     }
 
     /**
@@ -90,7 +99,7 @@ class SlugBehavior extends AttributeBehavior
     {
         if (!$this->value)
         {
-            $slugify = new Slugify((array) $this->slugifyOptions);
+            $slugify = new Slugify((array) $this->slugifyOptions, $this->slugifyRuleProvider);
 
             if ($this->owner->{$this->slugAttribute})
             {
